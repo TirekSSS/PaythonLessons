@@ -24,11 +24,13 @@ class Student:
 		self.gladness = 50
 		self.progress = 0
 		self.alive = True
+    self.money = 10
 		
 	def study(self):
 		print('Study time')
 		self.progress += 0.12
 		self.gladness -= 5
+    self.money +=10
 		
 	def sleep(self):
 		print('Sleep time')
@@ -38,6 +40,12 @@ class Student:
 		print('Chill time')
 		self.gladness += 5
 		self.progress -= 0.1
+    self.money -= 20
+  def work(self):
+    print('work day')
+    self.money += 50
+    self.gladness -= 2
+    self.progress -= 0.1
 		
 	def is_alive(self):
 		if self.progress < -0.5:
@@ -49,6 +57,8 @@ class Student:
 		elif self.progress > 5:
 			print('Passed the exam!')
 			self.alive = False
+    elif self.money <0
+      print('you are poor')
 		
 	def end(self):
 		print('Gladness:', self.gladness)
@@ -65,6 +75,8 @@ class Student:
 			self.chill()
 		self.end()
 		self.is_alive()
+    elif live_cube == 4:
+      self.work()
 
 obj = Student('Bob')
 
