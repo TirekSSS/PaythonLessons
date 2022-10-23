@@ -5,25 +5,42 @@ class Human:
 		self.age = 0
 	def live(self):
 		print(self.name, 'is alive')
-
-class Parent(Human):
-	def work():
-		print('I can work')
-
-class Child(Human):
 	def happybirthday(self):
 		self.age +=1 
 		print('I am', self.age)
+	def eat(self):
+		print('I am eating')
+
+class Parent(Human):
+	def work(self):
+		print(self.name,' can work')
+	def eat(self):
+		super().eat()
+		print('It is apple')
+
+class Child(Human):
 	def study(self):
 		print(self.name,' can study')
 
-obj = Child('Bob')
-obj.study()
-obj.live()
-obj.happybirthday()
-obj.happybirthday()
-obj.happybirthday()
+child1 = Child('Bob')
 
+# Создать класс Животное. От него наследуются класс котик, собачка и хомяк.
+# В классе животное есть 3 поля (характеристики) и 2 поведения (методы)
+# В классах конкретных животных нужно добавить еще 1 поведение
+
+# child1.study()
+# child1.live()
+# child1.happybirthday()
+# child1.happybirthday()
+# child1.happybirthday()
+
+parent1 = Parent('Jane')
+child1.eat()
+parent1.eat()
+# parent1.work()
+# parent1.eat()
+# for i in range(30):
+# 	parent1.happybirthday()
 # a = 4
 # print('a')
 # print(a)
