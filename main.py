@@ -1,22 +1,54 @@
-#print('hello world')
-#class Human:
-#  def __init__(self):
-#    self.name = 'None'
-#    self.age = 0
-#    self.gender = 'None'
-#  def introduce(self):
-#    print('Hello, ma name is', self.name)
-#  def add_info(self):
-#    self.name = input('Name: ')
-#    self.age = int(input('Age: '))
-#    self.gender = input('Gender')
-#
-#obj = Human()
-#obj.introduce()
-#obj.add_info()
-#obj.introduce()
+# a = 4
+# print('a')
+# print(a)
+# if a == 5:
+# 	print('if 1')
+# elif a > 3:
+# 	print('if 2')
+# elif a < 6:
+# 	print('if 3')
+# a = 0
+# while a<5:
+# 	print('hi')
+# 	a = a + 1
+
+# for i in range(5):
+# 	print(i)
+# print('Hello world')
+# print('This is my first commit')
+
+# class Human:
+# 	def __init__(self):
+# 		self.name = 'None'
+# 		self.age = 0
+# 		self.gender = 'None'
+# 	def introduce(self):
+# 		print('Hello, my name is', self.name)
+# 	def add_info(self):
+# 		self.name = input('Name: ')
+# 		self.age = int(input('Age: '))
+# 		self.gender = input('Gender: ')
+
+# obj = Human('')
+# obj.introduce()
+# obj.add_info()
+# obj.introduce()
 
 from random import *
+
+class University:
+	def __init__(self, title, faculty):
+		self.title = title
+		self.faculty = faculty
+		self.budget = False;
+	def check_progress(self, student):
+		if student > 3:
+			self.budget = True
+		self.isbudget()
+
+	def isbudget(self):
+		if self.budget == True:
+			print('Congratulation! You are on budget!')
 
 class Student:
 	def __init__(self, name):
@@ -24,13 +56,14 @@ class Student:
 		self.gladness = 50
 		self.progress = 0
 		self.alive = True
-    self.money = 10
+
+	def ask_budget(self, university):
+		university.check_progress(self.progress)
 		
 	def study(self):
 		print('Study time')
 		self.progress += 0.12
 		self.gladness -= 5
-    self.money +=10
 		
 	def sleep(self):
 		print('Sleep time')
@@ -40,12 +73,6 @@ class Student:
 		print('Chill time')
 		self.gladness += 5
 		self.progress -= 0.1
-    self.money -= 20
-  def work(self):
-    print('work day')
-    self.money += 50
-    self.gladness -= 2
-    self.progress -= 0.1
 		
 	def is_alive(self):
 		if self.progress < -0.5:
@@ -57,8 +84,6 @@ class Student:
 		elif self.progress > 5:
 			print('Passed the exam!')
 			self.alive = False
-    elif self.money <0
-      print('you are poor')
 		
 	def end(self):
 		print('Gladness:', self.gladness)
@@ -66,6 +91,8 @@ class Student:
 		
 	def live(self, day):
 		print('Day:',day)
+		if day % 10 == 0:
+			self.ask_budget(univer)
 		live_cube = randint(1,3)
 		if live_cube == 1:
 			self.study()
@@ -75,11 +102,9 @@ class Student:
 			self.chill()
 		self.end()
 		self.is_alive()
-    elif live_cube == 4:
-      self.work()
 
 obj = Student('Bob')
-
+univer = University('Step Univer', 'Computer Science')
 for day in range(365):
 	if obj.alive == False:
 		break
