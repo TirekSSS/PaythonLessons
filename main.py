@@ -1,4 +1,4 @@
-class Animal:
+class Human:
 	def __init__(self, name):
 		self.name = name
 		self.gender = 'None'
@@ -13,22 +13,20 @@ class Animal:
   def live(self):
     print('I am live')
 
-class Cat(Animal):
+class Student(Human):
+  def __init__(self, name):
+    self.progress = 10
 	def play(self):
 		print(self.name,' can play')
 	def eat(self):
 		super().eat()
-		print('It is cat food')
 
-class Dog(Animal):
+class Teacher(Human):
+  def __init__(self, name):
+    self.money = 300
 	def walk(self):
-		print(self.name,' can wolk')
-    
-class Hamster(Animal):
-  def sleep(self):
-    print(self.name,' can sleep')
-
-dog1 = Dog('reks')
+		print(self.name,' can wolk')  
+#      dog1 = Dog('reks')
 
 # Создать класс Животное. От него наследуются класс котик, собачка и хомяк.
 # В классе животное есть 3 поля (характеристики) и 2 поведения (методы)
@@ -40,9 +38,9 @@ dog1 = Dog('reks')
 # child1.happybirthday()
 # child1.happybirthday()
 
-cat1 = Cat('myrzik')
-dog1.eat()
-cat1.eat()
+#cat1 = Cat('myrzik')
+#dog1.eat()
+#cat1.eat()
 # parent1.work()
 # parent1.eat()
 # for i in range(30):
