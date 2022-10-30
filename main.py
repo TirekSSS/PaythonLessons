@@ -1,33 +1,45 @@
-def ask_age():
-	num1 = sign = num2 =''
-	# sign = ''
-	# num2 = ''
-	while num1 == '' or sign == '' or num2 == '':
-		try:
-			num1 = int(input('Input your number 1: '))	
-			num2 = int(input('Input your number 2: '))
-			sign = input('Input your sign:')
-			if sign == '+' or sign == '-' or sign == '*' or sign == '/':
-				print(num1,sign,num2)
-			else:
-				sign = ''
-				raise ValueError
-		except ValueError:
-			print('You need to write normal evaluation')
+def hungry(func):
+	def wrapper():
+		func()
+		print('hungry')
+	return wrapper
 
-		if sign == '+':
-			print(num1,sign,num2,'=',num1+num2)
-		elif sign == '/':
-			try:
-				print(num1,sign,num2,'=',num1/num2)
-			except:
-				print('This is division by zero!!!')
-		print('The end of program')
-def ask_age2():
-	age = ''
-	while age =='':
-		age = int(input('Input your age: '))
-		print('Your age is', age)
-	print('The end of program')
+def stupid(func):
+	def wrapper():
+		func()
+		print('stupid')
+	return wrapper
 
-ask_age()
+def evil(deco):
+	def wrapper():
+		deco()
+		print('evil')
+	return wrapper
+  
+def poor(func):
+	def wrapper():
+		func()
+		print('poor')
+	return wrapper  
+
+def lazy(func):
+	def wrapper():
+		func()
+		print('lazy')
+	return wrapper
+
+def unemployed(func):
+	def wrapper():
+		func()
+		print('unemployed')
+	return wrapper  
+
+@hungry
+@unemployed
+@evil
+@stupid
+@poor
+@lazy
+def human():
+	print('This is human')
+human()
